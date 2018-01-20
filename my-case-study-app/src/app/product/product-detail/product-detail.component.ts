@@ -9,13 +9,20 @@ import { ProductDetail } from './product-detail';
 })
 export class ProductDetailComponent implements OnInit {
   product: ProductDetail;
+  data: any;
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
     this.product = this.productService.getProduct();
+    this.productService.getProductInfo()
+    .subscribe(r => {
+      this.data = r; });
+
+    console.log(this.data);
 
 
   }
+
 
 }

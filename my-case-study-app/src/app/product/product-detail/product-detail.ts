@@ -4,6 +4,9 @@ export interface IProductDetail {
   primaryImage: string;
   // productImages: Image
   productTitle: string;
+  purchasingChannelCode: number;
+  productDescription: string;
+  promotionsDescription: Array<string>;
 }
 
 export class ProductDetail implements IProductDetail {
@@ -12,5 +15,9 @@ export class ProductDetail implements IProductDetail {
       public productPrice: string,
       public primaryImage: string,
       public productTitle: string,
+      public purchasingChannelCode: number,
+      public productDescription: string,
+      public promotionsDescription: Array<string>
+
       ) {}
 }

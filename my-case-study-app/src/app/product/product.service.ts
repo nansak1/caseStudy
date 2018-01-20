@@ -1,18 +1,39 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
 import { ProductDetail } from './product-detail/product-detail';
+
 
 @Injectable()
 export class ProductService {
 
-  constructor() { }
+  private productUrl = './api/item-data.json';
+
+  constructor(private http: HttpClient) { }
 
   getProduct(): ProductDetail {
     return {
       'productId': 1840,
       'productTitle': 'Ninja\u2122 Professional Blender with Single Serve Blending Cups',
       'productPrice': '$139.99',
-      'primaryImage': 'http:\/\/target.scene7.com\/is\/image\/Target\/14263758'
+      'primaryImage': 'http:\/\/target.scene7.com\/is\/image\/Target\/14263758',
+      'purchasingChannelCode': 0,
+      'productDescription': '',
+      'promotionsDescription': [
+        '$25 gift card with purchase of a select Ninja Blender',
+        '$25 gift card with purchase of a select Ninja Blender'
+       ]
     };
+  }
+
+  getProductInfo(): Observable <any> {
+    return this.http.get(this.productUrl)
+    .do(data => console.log('All: ' + JSON.stringify(data)));
+
   }
 
   /*private extractEncounterData(body: any): CaseLogEncounterDto {

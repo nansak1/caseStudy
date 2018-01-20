@@ -11,7 +11,7 @@ import { ProductDetail } from './product-detail/product-detail';
 @Injectable()
 export class ProductService {
 
-  private productUrl = './api/item-data.json';
+  private productUrl = 'data/item-data.json';
 
   constructor(private http: HttpClient) { }
 

@@ -57,14 +57,14 @@ export class ProductService {
     console.log(body);
     const productId = body.CatalogEntryView[0].itemId;
     const productTitle = body.CatalogEntryView[0].title;
-    const purchasingChanelCode = Number(body.CatalogEntryView[0].purchasingChannelCode);
+    const purchasingChannelCode = Number(body.CatalogEntryView[0].purchasingChannelCode);
     const price = body.CatalogEntryView[0].Offers[0].OfferPrice[0].formattedPriceValue;
     const priceQualifier = body.CatalogEntryView[0].Offers[0].OfferPrice[0].priceQualifier;
     const primaryImage = body.CatalogEntryView[0].Images[0].PrimaryImage[0].image;
     const images = body.CatalogEntryView[0].Images[0].AlternateImages;
 
     console.log(primaryImage);
-    return new ProductDetail(productId, price, primaryImage, images, productTitle, purchasingChanelCode);
+    return new ProductDetail(productId, price, primaryImage, images, productTitle, purchasingChannelCode);
   }
 
   private handleError (response: any) {

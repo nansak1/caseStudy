@@ -19,18 +19,18 @@ export class ProductDetailComponent implements OnInit {
   ngOnInit() {
     // this.product = this.productService.getProduct();
 
-   /* const productObservable = this.productService.getProductInfo();
+    const productObservable = this.productService.getProductInfo();
 
     this.sub = Observable.forkJoin(productObservable)
     .subscribe((results: any[]) => {
       this.data = results[0];
       console.log(this.data);
-    });*/
-    this.productService.getProductInfo()
+    });
+    /*this.productService.getProductInfo()
     .subscribe(r => {
       this.data = r;
       console.log(this.data);
-    });
+    });*/
 
     //console.log(this.data);
 

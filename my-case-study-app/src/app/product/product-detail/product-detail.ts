@@ -1,8 +1,8 @@
 export interface IProductDetail {
   productId: number;
-  //productPrice: string;
-  //primaryImage: string;
-  // productImages: Image
+  productPrice: string;
+  primaryImage: string;
+  productImages: Array<string>;
   productTitle: string;
   purchasingChannelCode: number;
   //productDescription: string;
@@ -12,8 +12,9 @@ export interface IProductDetail {
 export class ProductDetail implements IProductDetail {
   constructor (
       public productId: number,
-      //public productPrice: string,
-      //public primaryImage: string,
+      public productPrice: string,
+      public primaryImage: string,
+      public productImages: Array<string>,
       public productTitle: string,
       public purchasingChannelCode: number,
       //public productDescription: string,

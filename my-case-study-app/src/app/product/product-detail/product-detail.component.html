@@ -2,24 +2,23 @@
   product-detail works!
 </p>-->
 <div class="container-fluid">
-<div class="row justify-content-start">
+  <div class="row justify-content-start">
     <div class="col-8 col-sm-5 col-md-6">
-      <h6>{{product.productTitle}}</h6>
-      <img width="300" alt="Blender" src='{{product.primaryImage}}'>
+      <p>{{data.productTitle}}</p>
+      <img width="300" alt="Blender" src='{{data.primaryImage}}'>
     </div>
 
     <div class="col-4 col-sm-5 col-md-6">
       <div class=row>
-          {{product.productPrice}}
+        {{data.productPrice}}
       </div>
       <div class="row">
-          <app-quantity-counter></app-quantity-counter>
+        <app-quantity-counter></app-quantity-counter>
       </div>
       <div class="row">
-          <button type="button" *ngIf="product.purchasingChannelCode === 0 || product.purchasingChannelCode === 2" class="btn btn-primary btn-sm">PICK UP IN STORE</button>
-          <button type="button" *ngIf="product.purchasingChannelCode === 0 || product.purchasingChannelCode === 1" class="btn btn-primary btn-sm">ADD TO CART</button>
+          <button type="button" *ngIf="data.purchasingChannelCode === 0 || data.purchasingChannelCode === 2" class="btn btn-primary btn-sm">PICK UP IN STORE</button>
+          <button type="button" *ngIf="data.purchasingChannelCode === 0 || data.purchasingChannelCode === 1" class="btn btn-primary btn-sm">ADD TO CART</button>
       </div>
     </div>
   </div>
 </div>
-

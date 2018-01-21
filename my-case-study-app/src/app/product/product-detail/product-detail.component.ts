@@ -17,7 +17,7 @@ export class ProductDetailComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.product = this.productService.getProduct();
+    // this.product = this.productService.getProduct();
 
    /* const productObservable = this.productService.getProductInfo();
 

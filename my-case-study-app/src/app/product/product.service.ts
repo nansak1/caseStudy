@@ -15,7 +15,7 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-  getProduct(): ProductDetail {
+ /* getProduct(): ProductDetail {
     return {
       'productId': 1840,
       'productTitle': 'Ninja\u2122 Professional Blender with Single Serve Blending Cups',
@@ -23,12 +23,12 @@ export class ProductService {
       //'primaryImage': 'http:\/\/target.scene7.com\/is\/image\/Target\/14263758',
       'purchasingChannelCode': 0,
       //'productDescription': '',
-      /*'promotionsDescription': [
+      'promotionsDescription': [
         '$25 gift card with purchase of a select Ninja Blender',
         '$25 gift card with purchase of a select Ninja Blender'
-       ]*/
+       ]
     };
-  }
+  }*/
 
   getProductInfo(): Observable <any> {
     return this.http.get(this.productUrl)
@@ -60,9 +60,11 @@ export class ProductService {
     const purchasingChanelCode = Number(body.CatalogEntryView[0].purchasingChannelCode);
     const price = body.CatalogEntryView[0].Offers[0].OfferPrice[0].formattedPriceValue;
     const priceQualifier = body.CatalogEntryView[0].Offers[0].OfferPrice[0].priceQualifier;
-    console.log(priceQualifier);
-    return new ProductDetail(productId, productTitle, purchasingChanelCode
-      );
+    const primaryImage = body.CatalogEntryView[0].Images[0].PrimaryImage[0].image;
+    const images = body.CatalogEntryView[0].Images[0].AlternateImages;
+
+    console.log(primaryImage);
+    return new ProductDetail(productId, price, primaryImage, images, productTitle, purchasingChanelCode);
   }
 
   private handleError (response: any) {

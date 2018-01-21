@@ -15,43 +15,14 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
- /* getProduct(): ProductDetail {
-    return {
-      'productId': 1840,
-      'productTitle': 'Ninja\u2122 Professional Blender with Single Serve Blending Cups',
-      //'productPrice': '$139.99',
-      //'primaryImage': 'http:\/\/target.scene7.com\/is\/image\/Target\/14263758',
-      'purchasingChannelCode': 0,
-      //'productDescription': '',
-      'promotionsDescription': [
-        '$25 gift card with purchase of a select Ninja Blender',
-        '$25 gift card with purchase of a select Ninja Blender'
-       ]
-    };
-  }*/
-
   getProductInfo(): Observable <any> {
     return this.http.get(this.productUrl)
-    //.do(data => console.log('All: ' + JSON.stringify(data)));
     .map((response: any) => {
       return this.extractData(response);
     }).catch(this.handleError);
 
 
   }
-
-  /*private extractEncounterData(body: any): CaseLogEncounterDto {
-    const detailbyRank = [];
-    const detailAll = [];
-    body.caseLogSummaryDetailDtosByRank.map(d => {
-      detailbyRank.push(new CaseLogEncounterDetailDto(d.summaryId, d.rankId, d.summaryName, d.total));
-    });
-    body.caseLogSummaryDetailDtosByAll.map(d => {
-      detailAll.push(new CaseLogEncounterDetailDto(d.summaryId, d.rankId, d.summaryName, d.total));
-    });
-    const summary = new CaseLogEncounterDto(detailbyRank, detailAll);
-    return summary;
-  }*/
 
   private extractData(body: any) {
     console.log(body);
@@ -64,7 +35,7 @@ export class ProductService {
     const images = body.CatalogEntryView[0].Images[0].AlternateImages;
 
     console.log(primaryImage);
-    return new ProductDetail(productId, price, primaryImage, images, productTitle, purchasingChannelCode);
+    return new ProductDetail(productId, price, priceQualifier, primaryImage, images, productTitle, purchasingChannelCode);
   }
 
   private handleError (response: any) {

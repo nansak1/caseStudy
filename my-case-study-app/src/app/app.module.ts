@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './product/product.component';
 import { ProductDetailComponent } from './product/product-detail/product-detail.component';
 import { QuantityCounterComponent } from './shared/quantity-counter/quantity-counter.component';
+import { CarouselComponent } from './shared/carousel/carousel.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { QuantityCounterComponent } from './shared/quantity-counter/quantity-cou
     AppComponent,
     ProductComponent,
     ProductDetailComponent,
-    QuantityCounterComponent
+    QuantityCounterComponent,
+    CarouselComponent
   ],
   imports: [
     BrowserModule,

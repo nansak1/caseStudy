@@ -12,6 +12,7 @@ import 'rxjs/Rx';
 export class ProductDetailComponent implements OnInit {
   product: ProductDetail;
   data: any;
+  images: Array<string>;
   sub: any;
 
   constructor(private productService: ProductService) { }
@@ -24,6 +25,7 @@ export class ProductDetailComponent implements OnInit {
     this.sub = Observable.forkJoin(productObservable)
     .subscribe((results: any[]) => {
       this.data = results[0];
+      this.images = results[0].productImages;
       console.log(this.data);
     });
     /*this.productService.getProductInfo()

@@ -13,6 +13,7 @@ export class ProductDetailComponent implements OnInit {
   product: ProductDetail;
   data: any;
   images: Array<string>;
+  primaryImage: string;
   sub: any;
 
   constructor(private productService: ProductService) { }
@@ -32,6 +33,7 @@ export class ProductDetailComponent implements OnInit {
     .subscribe(r => {
       this.data = r;
       this.images = r.productImages;
+      this.primaryImage = r.primaryImage;
       console.log(this.data);
     });
 

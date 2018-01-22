@@ -2,21 +2,31 @@
   <div class="row m-5"></div>
   <div class="row" *ngIf='data'>
     <div class="col-md-6">
-      <span class="title-product m-3">{{data.productTitle}}</span>
-      <!--<img width="300" alt="Blender" src='{{data.primaryImage}}'>-->
+      <div class="row col-sm-12 m-3">
+        <h4 class="title-product">{{data.productTitle}}</h4>
+      </div>
       <app-carousel [primary]="primaryImage" [data]="images"></app-carousel>
     </div>
     <div class="col-md-6">
       <div class="row col-sm-6 m-3">
-        <div class="v-text"><b>{{data.productPrice}}</b> <span class="tiny-text"> {{ data.priceQualifier}}</span></div>
+        <div class="v-text">
+          <b>{{data.productPrice}}</b>
+          <span class="tiny-text"> {{ data.priceQualifier}}</span>
+        </div>
       </div>
       <div class="row col-sm-6 m-3">
         <p class="ruler"></p>
-        <ul class="promo" >
-        <li><span><small>Spend $50, ships free</small></span></li>
-        <li><span><small>$25 gift card with purchase of select Ninja Blender</small></span></li>
-      </ul>
-      <p class="ruler"></p>
+        <!--<p class="promo">-->
+            <ul class="promo">
+            <li>
+              <small>Spend $50, ships free</small>
+            </li>
+            <li>
+              <small>$25 gift card with purchase of select Ninja Blender</small>
+            </li>
+          </ul>
+        <!--</p>-->
+        <p class="ruler"></p>
 
       </div>
       <div class="row col-sm-6 m-3">
@@ -24,8 +34,12 @@
       </div>
       <div class="row col-sm-6 m-3">
         <!--<div class="col-lg-12">-->
-          <div class="col-sm-6"><button  type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 2' class="btn btn-secondary btn-sm">PICK UP IN STORE</button></div>
-          <div class="col-sm-6"><button  type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 1' class="btn btn-primary btn-sm">ADD TO CART</button></div>
+        <div class="col-sm-6">
+          <button type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 2' class="btn btn-secondary btn-sm">PICK UP IN STORE</button>
+        </div>
+        <div class="col-sm-6">
+          <button type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 1' class="btn btn-primary btn-sm">ADD TO CART</button>
+        </div>
         <!--</div>-->
       </div>
     </div>

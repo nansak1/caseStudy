@@ -33,6 +33,7 @@ export class ProductService {
     const priceQualifier = body.CatalogEntryView[0].Offers[0].OfferPrice[0].priceQualifier;
     const primaryImage = body.CatalogEntryView[0].Images[0].PrimaryImage[0].image;
     const images = body.CatalogEntryView[0].Images[0].AlternateImages;
+    images.unshift(body.CatalogEntryView[0].Images[0].PrimaryImage[0]);
 
     console.log(primaryImage);
     return new ProductDetail(productId, price, priceQualifier, primaryImage, images, productTitle, purchasingChannelCode);

@@ -2,6 +2,7 @@
   /*font-size: 23px;*/
   font-weight: normal;
   color: #333;
+  text-align: center;
 }
 
 div.v-text{
@@ -26,4 +27,9 @@ div.v-text{
   border: 0.5px solid #8c8b8b;
   width: 500px;
 
+}
+
+ul {
+  margin-left: 10px;
+  padding-left: 10px;
 }

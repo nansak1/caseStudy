@@ -34,9 +34,10 @@ export class ProductService {
     const primaryImage = body.CatalogEntryView[0].Images[0].PrimaryImage[0].image;
     const images = body.CatalogEntryView[0].Images[0].AlternateImages;
     images.unshift(body.CatalogEntryView[0].Images[0].PrimaryImage[0]);
+    const description = body.CatalogEntryView[0].ItemDescription[0].features;
 
     console.log(primaryImage);
-    return new ProductDetail(productId, price, priceQualifier, primaryImage, images, productTitle, purchasingChannelCode);
+    return new ProductDetail(productId, price, priceQualifier, primaryImage, images, productTitle, purchasingChannelCode, description);
   }
 
   private handleError (response: any) {

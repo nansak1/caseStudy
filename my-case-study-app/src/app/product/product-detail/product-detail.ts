@@ -6,7 +6,7 @@ export interface IProductDetail {
   productImages: Array<string>;
   productTitle: string;
   purchasingChannelCode: number;
-  //productDescription: string;
+  productDescription: string;
   //promotionsDescription: Array<string>;
 }
 
@@ -19,7 +19,7 @@ export class ProductDetail implements IProductDetail {
       public productImages: Array<string>,
       public productTitle: string,
       public purchasingChannelCode: number,
-      //public productDescription: string,
+      public productDescription: string,
       //public promotionsDescription: Array<string>
 
       ) {}

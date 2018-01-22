@@ -14,34 +14,44 @@
           <span class="tiny-text"> {{ data.priceQualifier}}</span>
         </div>
       </div>
-      <div class="row col-sm-6 m-3">
+      <div class="row col-sm-6 m-2">
         <p class="ruler"></p>
-        <!--<p class="promo">-->
-            <ul class="promo">
-            <li>
-              <small>Spend $50, ships free</small>
-            </li>
-            <li>
-              <small>$25 gift card with purchase of select Ninja Blender</small>
-            </li>
-          </ul>
-        <!--</p>-->
+        <ul class="promo">
+          <li>
+            <small>Spend $50, ships free</small>
+          </li>
+          <li>
+            <small>$25 gift card with purchase of select Ninja Blender</small>
+          </li>
+        </ul>
         <p class="ruler"></p>
-
       </div>
-      <div class="row col-sm-6 m-3">
+      <div class="row col-sm-6 m-2">
         <app-quantity-counter></app-quantity-counter>
       </div>
-      <div class="row col-sm-6 m-3">
-        <!--<div class="col-lg-12">-->
-        <div class="col-sm-6">
+      <div class="row col-sm-6 m-2">
+        <div class="bd">
           <button type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 2' class="btn btn-secondary btn-sm">PICK UP IN STORE</button>
-        </div>
-        <div class="col-sm-6">
           <button type="button" *ngIf='data.purchasingChannelCode === 0 || data.purchasingChannelCode === 1' class="btn btn-primary btn-sm">ADD TO CART</button>
         </div>
-        <!--</div>-->
       </div>
+      <div class="row col-sm-6 m-2">
+        <small>Returns</small>
+        <span class="tiny-text col-sm-10">
+          This item must be returned within 30 days of the ship date.See return policy for details.
+          Price, promotions, styles and availability may vary by store and online.
+        </span>
+      </div>
+      <div class="row col-sm-6 m-2">
+          <div class="bd">
+              <button type="button"  class="btn btn-light btn-sm">ADD TO REGISTRY</button>
+              <button type="button"  class="btn btn-light btn-sm">ADD TO LIST</button>
+              <button type="button"  class="btn btn-light btn-sm">SHARE</button>
+            </div>
+      </div>
+      <!--<div class="row col-sm-m-2">
+        <small *ngFor = "let d of data.productDescription">{{d}}</small>
+      </div>-->
     </div>
   </div>
 </div>

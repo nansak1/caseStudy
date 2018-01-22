@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { ProductDetail } from './product-detail';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/Rx';
+// import 'rxjs/Rx';
 
 @Component({
   selector: 'app-product-detail',
@@ -19,22 +19,12 @@ export class ProductDetailComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    // this.product = this.productService.getProduct();
-
-    /*const productObservable = this.productService.getProductInfo();
-
-    this.sub = Observable.forkJoin(productObservable)
-    .subscribe((results: any[]) => {
-      this.data = results[0];
-      this.images = results[0].productImages;
-      console.log(this.data);
-    });*/
     this.productService.getProductInfo()
-    .subscribe(r => {
-      this.data = r;
-      this.images = r.productImages;
-      this.primaryImage = r.primaryImage;
-      console.log(this.data);
+    .subscribe(result => {
+      this.data = result;
+      this.images = result.productImages;
+      this.primaryImage = result.primaryImage;
+      // console.log(this.data);
     });
 
   }

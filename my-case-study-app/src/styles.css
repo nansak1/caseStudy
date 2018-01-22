@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* bootstrap over rides*/
+
+body {
+  /*font-family: "Targetica","Helvetica Neue","Helvetica","Arial",sans-serif;*/
+  font-family: Helvetica, Arial, sans-serif
+}
+.btn-sm{
+  font-size:.75em;
+  /*font-size: 12px;*/
+  line-height: 1;
+ }
+
+ .btn-secondary {
+  color: #fff;
+  background-color: #333;
+  border-color: #333;
+ }
+
+ .btn-primary{
+  color: #fff;
+  background-color: #c00;
+  border: 1px #c00 solid;
+ }
+
+ @media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  [class*="col-"] {
+      width: 100%;
+  }
+}

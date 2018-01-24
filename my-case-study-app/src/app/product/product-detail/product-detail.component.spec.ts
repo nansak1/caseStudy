@@ -1,6 +1,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ProductDetailComponent } from './product-detail.component';
+import { CarouselComponent } from '../../shared/carousel/carousel.component';
+import { QuantityCounterComponent } from '../../shared/quantity-counter/quantity-counter.component';
+
+import { ProductService } from '../product.service';
 
 describe('ProductDetailComponent', () => {
   let component: ProductDetailComponent;
@@ -8,7 +13,17 @@ describe('ProductDetailComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProductDetailComponent ]
+      imports: [
+        HttpClientModule
+      ],
+      declarations: [
+        ProductDetailComponent,
+        CarouselComponent,
+        QuantityCounterComponent
+       ],
+       providers: [
+         ProductService
+       ]
     })
     .compileComponents();
   }));

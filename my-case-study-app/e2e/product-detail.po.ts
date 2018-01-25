@@ -24,4 +24,9 @@ export class ProductDetailPage {
     const activeImage = $('.carousel-item.active img');
     return activeImage;
   }
+
+  addToQuantity() {
+    const add = $('.input-group-prepend button');
+    add.click();
+  }
 }

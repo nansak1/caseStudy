@@ -14,7 +14,6 @@ export class ProductDetailComponent implements OnInit {
   data: any;
   images: Array<string>;
   primaryImage: string;
-  sub: any;
 
   constructor(private productService: ProductService) { }
 
@@ -24,7 +23,6 @@ export class ProductDetailComponent implements OnInit {
       this.data = result;
       this.images = result.productImages;
       this.primaryImage = result.primaryImage;
-      // console.log(this.data);
     });
 
   }

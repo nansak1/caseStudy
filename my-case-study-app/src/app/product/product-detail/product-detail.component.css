@@ -18,7 +18,6 @@ div.v-text span {
 }
 .tiny-text {
   font-size: 8px;
-
 }
 
 .promo {
@@ -31,12 +30,10 @@ div.v-text span {
   width: 500px;
 
 }
-.bd{
+.btnSpace{
   position: relative;
   padding: 1rem;
   margin: 0 -15px 0;
-  /*border: solid #f7f7f9;
-  border-width: .2rem 0 0;*/
 }
 
 ul {

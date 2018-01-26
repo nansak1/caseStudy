@@ -25,7 +25,6 @@ export class ProductService {
   }
 
   private extractData(body: any) {
-    console.log(body);
     const productId = body.CatalogEntryView[0].itemId;
     const productTitle = body.CatalogEntryView[0].title;
     const purchasingChannelCode = Number(body.CatalogEntryView[0].purchasingChannelCode);
@@ -36,7 +35,6 @@ export class ProductService {
     images.unshift(body.CatalogEntryView[0].Images[0].PrimaryImage[0]);
     const description = body.CatalogEntryView[0].ItemDescription[0].features;
 
-    console.log(primaryImage);
     return new ProductDetail(productId, price, priceQualifier, primaryImage, images, productTitle, purchasingChannelCode, description);
   }
 

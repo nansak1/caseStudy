@@ -23,9 +23,6 @@
   </div>
 
   <ol class='carousel-indicators'>
-    <!--<li data-target="#carousel-custom" class="active">
-            <img class="thumbnail" src='{{primary}}' data-slide-to="" alt='' />
-        </li>-->
     <li data-target="#carousel-custom" *ngFor="let d of data let i = index" [attr.data-slide-to]="i">
       <img class="thumbnail" src='{{d.image}}' alt='' />
     </li>

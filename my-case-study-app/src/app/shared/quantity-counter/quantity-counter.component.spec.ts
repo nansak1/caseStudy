@@ -22,4 +22,16 @@ describe('QuantityCounterComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should increment by 1', () => {
+    component.qty = 2;
+    component.increment();
+    expect(component.qty).toBe(3);
+  });
+
+  it('should subtract by 1', () => {
+    component.qty = 5;
+    component.decrement();
+    expect(component.qty).toBe(4);
+  });
 });

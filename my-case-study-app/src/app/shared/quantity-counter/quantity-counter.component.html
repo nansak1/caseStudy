@@ -2,10 +2,10 @@
 <div class="input-group input-group-sm">
   <div class="input-group-prepend">
       <span class="input-group-text">Quantity: </span>
-    <button class="btn btn-outline-secondary" (click)="increment()" type="button">+</button>
+      <button class="btn btn-outline-secondary" (click)="decrement()" type="button">-</button>
   </div>
   <input type="text" id="cartQty" class="form-control" value={{qty}} placeholder="Quantity:" aria-label="Quantity" aria-describedby="basic-addon2">
   <div class="input-group-append">
-    <button class="btn btn-outline-secondary" (click)="decrement()" type="button">-</button>
+    <button class="btn btn-outline-secondary" (click)="increment()" type="button">+</button>
   </div>
 </div>

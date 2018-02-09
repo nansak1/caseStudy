@@ -26,7 +26,7 @@ export class ProductDetailPage {
   }
 
   addToQuantity() {
-    const add = $('.input-group-prepend button');
+    const add = $('.input-group-append button');
     add.click();
   }
 }
